@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 public class Team {
 
-	private static final int JOGADORES_TIME = 10;
+	private static final int JOGADORES_TIME = 11;
 
 	private final String name;
 
@@ -38,7 +38,7 @@ public class Team {
 		Objects.requireNonNull(player, "Player is required.");
 
 		if (this.players.size() == JOGADORES_TIME) {
-			throw new TeamException("O meu time já está completo.");
+			throw new TeamException("O meu time já está completo. Não tem espaço para o jogador " + player);
 		}
 
 		this.players.add(player);

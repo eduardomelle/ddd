@@ -63,4 +63,8 @@ public class Player {
 		return "Player [name=" + name + ", city=" + city + ", email=" + email + ", salary=" + salary + "]";
 	}
 
+	public static PlayerBuilder builder() {
+		return new PlayerBuilder();
+	}
+
 }

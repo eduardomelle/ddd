@@ -21,4 +21,20 @@ public class TeamTests {
 		Assertions.assertTrue(bahia.isEmpty());
 	}
 
+	@Test
+	public void shouldNotBeOverPlayer() {
+		Team bahia = Team.of("Bahia");
+
+		for (int index = 0; index < 11; index++) {
+			Player player = Player.builder().name("Player " + index).build();
+			bahia.add(player);
+		}
+
+		TeamException teamException = Assertions.assertThrows(TeamException.class, () -> {
+			bahia.add(Player.builder().name("Otavio").build());
+		});
+
+		System.err.println("Error message: " + teamException.getMessage());
+	}
+
 }
