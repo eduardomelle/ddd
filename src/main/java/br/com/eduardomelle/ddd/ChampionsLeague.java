@@ -9,5 +9,7 @@ package br.com.eduardomelle.ddd;
  */
 // Repository
 public interface ChampionsLeague {
+	
+	Team subscribe(Team team);
 
 }
